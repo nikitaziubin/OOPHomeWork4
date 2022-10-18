@@ -1,16 +1,15 @@
-﻿namespace Class
+﻿namespace Interface 
 {
-    internal class Mounting : GeagraficObject
+    internal class Mounting
     {
         private string top;
-        public Mounting(string top, string name, int x, int y) : base(x, y, name)
+        public Mounting(string top, string name, int x, int y)
         {
             this.top = top;
         }
 
         public virtual void getInformation()
         {
-            base.getInformation();
             Console.WriteLine($"Top: {top}\n");
         }
     }

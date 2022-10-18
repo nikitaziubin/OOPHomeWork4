@@ -1,4 +1,4 @@
-﻿namespace DZ4
+﻿namespace Class
 {
     internal abstract class GeagraficObject
     {
@@ -13,11 +13,8 @@
         }
 
         public virtual void getInformation()
-        {
-
+        {   
+            Console.WriteLine($"Name: {name}\nX: {x}\nY: {y}");
         }
-
-
-
     }
 }
