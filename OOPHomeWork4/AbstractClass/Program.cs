@@ -4,18 +4,33 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        string name, geofObject;
+        string name;
         int x, y;
-        Console.Write("Enter River(R) or Mounting(M): ");
-        geofObject = Console.ReadLine();
-        if (geofObject == "R")
+        Console.WriteLine("Hello, World!");
+        string Geofobject;
+        Console.Write("Enter River(R) or Mounting(M)");
+        Geofobject = Console.ReadLine();
+        if (Geofobject == "R")
         {
-            River a = new River(1, 2, "dnipro1", 4, 5);
+            Console.Write("Enter River name: ");
+            name = Console.ReadLine();
+            Console.Write("Enter x: ");
+            x = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter y: ");
+            y = Convert.ToInt32(Console.ReadLine());
+            River a = new River(name, x, y);
             a.getInformation();
+
         }
         else
         {
-            Mounting b = new Mounting("Top", "Goverla", 2, 3);
+            Console.Write("Enter Mounting name: ");
+            name = Console.ReadLine();
+            Console.Write("Enter x: ");
+            x = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter y: ");
+            y = Convert.ToInt32(Console.ReadLine());
+            Mounting b = new Mounting("Mounting Top", "Goverla", 2, 3);
             b.getInformation();
         }
     }

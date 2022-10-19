@@ -5,10 +5,10 @@
         private int riverSpeed;
         private int length;
 
-        public River(int riverSpeed, int length, string name, int x, int y) : base(x, y, name)
+        public River( string name, int x, int y) : base(x, y, name)
         {
-            this.riverSpeed = riverSpeed;
-            this.length = length;
+            this.riverSpeed = 30;
+            this.length = 1900;
         }
         public virtual void getInformation()
         {
