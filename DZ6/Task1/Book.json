@@ -1,0 +1,11 @@
+{
+  "PublishingHouseId": 2,
+  "Title": "Підручник. Алгебра 8",
+  "PublishingHouse": {
+    "Id": 2,
+    "Name": "ГІМНАЗІЯ",
+    "Adress": "Адреса 2"
+  }
+}
+
+ 

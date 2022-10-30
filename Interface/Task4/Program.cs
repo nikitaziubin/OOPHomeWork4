@@ -1,36 +1,47 @@
 ﻿using Task4;
+
+struct A
+{
+
+    public int sI;
+    public string sStr;
+}
+
+class B
+{
+    static int Get()
+    {
+        return 0;
+    }
+    int Get()
+    {
+        return 0;
+    }
+    public int cI;
+    public A cA;
+}
+
+
 internal class Program
 {
-    private static void Main(string[] args)
+    static void Main()
     {
-        string name;
-        int x, y;
-        Console.WriteLine("Hello, World!");
-        string Geofobject;
-        Console.Write("Enter River(R) or Mounting(M)");
-        Geofobject = Console.ReadLine();
-        if (Geofobject == "R")
-        {
-            Console.Write("Enter River name: ");
-            name = Console.ReadLine();
-            Console.Write("Enter x: ");
-            x = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter y: ");
-            y = Convert.ToInt32(Console.ReadLine());
-            River a = new River(5, 6, "jjj", 7, 9);
-            a.getInformation(name, x, y);
+        A a1 = new A();
+        A a2 = a1;
+        a2.sStr = "aaa";
+        a2.sI = 10;
+        B b1 = new B();
+        B b2 = b1;
 
-        }
-        else
-        {
-            Console.Write("Enter Mounting name: ");
-            name = Console.ReadLine();
-            Console.Write("Enter x: ");
-            x = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter y: ");
-            y = Convert.ToInt32(Console.ReadLine());
-            Mounting b = new Mounting("Mounting Top", "Goverla", 2, 3);
-            b.getInformation(name, x, y);
-        }
+        b2.cA = a1;
+        b2.cI = 5;
+        Console.Write("b1.CA.sI={0}, b1.cA.sStr={1}, b1.cI={2}; b2.CA.sI={3}, b2.cA.sStr={4}, b2.cI={5}. ",
+        b1.cA.sI, b1.cA.sStr, b1.cI, b2.cA.sI, b2.cA.sStr, b2.cI);
+        Console.ReadKey(true);
     }
 }
+
+
+
+
+

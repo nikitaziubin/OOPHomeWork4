@@ -10,7 +10,7 @@
             this.riverSpeed = 30;
             this.length = 1900;
         }
-        public virtual void getInformation()
+        public override void getInformation()
         {
             base.getInformation();
             Console.WriteLine($"Riverlength: {length}\nRiverSpeed: {riverSpeed}\n");

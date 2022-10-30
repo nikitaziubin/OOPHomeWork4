@@ -8,7 +8,7 @@
             this.top = top;
         }
 
-        public virtual void getInformation()
+        public override void getInformation()
         {
             base.getInformation();
             Console.WriteLine($"Top: {top}\n");
