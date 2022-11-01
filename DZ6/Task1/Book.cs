@@ -16,9 +16,7 @@ namespace Task1
         //[JsonPropertyName("Title")]
         //[JsonPropertyName("Name")]
         public string title { get; set; }
-        
         //public List<PublishingHouse> PublishingHouse { get; set; }
-
         public PublishingHouse PublishingHouse { get; set; }
     }
 }
