@@ -14,5 +14,6 @@ namespace WinFormsApp1
         public string? cours { get; set; }
         public string? livePlace { get; set; }
         public int id { get; set; }
+
     }
 }

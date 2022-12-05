@@ -2,11 +2,25 @@
   "place": "PanasaMyrnogo 25",
   "students": [
     {
-      "faculty": "WE",
-      "kafedra": "WE",
-      "cours": "WEWE",
-      "livePlace": "WE",
+      "faculty": "we",
+      "kafedra": "we",
+      "cours": "we",
+      "livePlace": "we",
       "id": 1
+    },
+    {
+      "faculty": "we",
+      "kafedra": "we",
+      "cours": "we",
+      "livePlace": "we",
+      "id": 2
+    },
+    {
+      "faculty": "we",
+      "kafedra": "we",
+      "cours": "we",
+      "livePlace": "we",
+      "id": 3
     }
   ]
 }

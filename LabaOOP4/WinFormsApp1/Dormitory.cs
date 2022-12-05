@@ -9,6 +9,6 @@ namespace WinFormsApp1
     public class Dormitory
     {
         public string place { get; } = "PanasaMyrnogo 25";
-        public  List<Student> students { get; set;  } = new List<Student>();
+        public  List<Student> students { get; set; } = new List<Student>();
     }
 }

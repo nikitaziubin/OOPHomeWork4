@@ -13,6 +13,7 @@ using static System.Windows.Forms.DataFormats;
 
 namespace WinFormsApp1
 {
+
     public partial class Form2 : Form
     {
         const string path = "C:\\Users\\nikit\\source\\repos\\OOPHomeWork4\\LabaOOP4\\WinFormsApp1\\TXT.json";
@@ -28,18 +29,14 @@ namespace WinFormsApp1
             
 
         }
-        public int currentId = 1;
 
         private void button1_Click_1(object sender, EventArgs e)
-        {
-            
+        {            
             student.faculty = textBox1.Text;
             student.kafedra = textBox2.Text;
             student.cours = textBox3.Text;
             student.livePlace = textBox4.Text;
-            student.id += currentId ;
-
-            currentId++;
+            student.id = IdGenerator.getCurrentId();
 
             form1.dormitory.students.Add(student);
 
@@ -74,6 +71,11 @@ namespace WinFormsApp1
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
