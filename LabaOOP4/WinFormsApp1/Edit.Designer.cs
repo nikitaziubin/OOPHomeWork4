@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxID = new System.Windows.Forms.TextBox();
             this.textBoxFaculty = new System.Windows.Forms.TextBox();
             this.textBoxKafedra = new System.Windows.Forms.TextBox();
             this.textBoxCourse = new System.Windows.Forms.TextBox();
@@ -37,17 +36,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // textBoxID
-            // 
-            this.textBoxID.Location = new System.Drawing.Point(12, 12);
-            this.textBoxID.Multiline = true;
-            this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(200, 78);
-            this.textBoxID.TabIndex = 0;
-            this.textBoxID.TextChanged += new System.EventHandler(this.textBoxID_TextChanged);
             // 
             // textBoxFaculty
             // 
@@ -120,21 +111,33 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "changeLivePlace";
             // 
-            // label5
+            // button1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 58);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 32);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "ID";
+            this.button1.Location = new System.Drawing.Point(52, 357);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 46);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Cancel";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(52, 253);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(150, 46);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Ok";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -143,7 +146,6 @@
             this.Controls.Add(this.textBoxCourse);
             this.Controls.Add(this.textBoxKafedra);
             this.Controls.Add(this.textBoxFaculty);
-            this.Controls.Add(this.textBoxID);
             this.Name = "Edit";
             this.Text = "Edit";
             this.Load += new System.EventHandler(this.Edit_Load);
@@ -153,8 +155,6 @@
         }
 
         #endregion
-
-        private TextBox textBoxID;
         private TextBox textBoxFaculty;
         private TextBox textBoxKafedra;
         private TextBox textBoxCourse;
@@ -163,6 +163,7 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private Label label5;
+        private Button button1;
+        private Button button2;
     }
 }
