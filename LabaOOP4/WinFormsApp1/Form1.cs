@@ -66,25 +66,8 @@ namespace WinFormsApp1
         private void button2_Click(object sender, EventArgs e)
         {
             Form3 form3 = new Form3();
-            Form1 form1 = new Form1();
             form3.Show();
-
-            const string path = "C:\\Users\\nikit\\source\\repos\\OOPHomeWork4\\LabaOOP4\\WinFormsApp1\\TXT.json";
-            string josnFile = File.ReadAllText(path);
-
-            JObject json = JObject.Parse(josnFile);
-            var result = json["students"]
-            //.Where(s => Convert.ToInt32(s["id"]) == Convert.ToInt32(textBoxID.Text))
-            .Where(s => s["faculty"]?.ToString() == textBox1.Text && s["kafedra"]?.ToString() == textBox2.Text
-            && s["cours"].ToString() == textBox3.Text)
-                .Select(s => new Student
-                {
-                    id = Convert.ToInt32(s["id"]),
-                    faculty = s["faculty"].ToString(),
-                    kafedra = s["kafedra"].ToString(),
-                    cours = s["cours"].ToString(),
-                    livePlace = s["livePlace"].ToString()
-                }).ToList();
+            IList<Student> result = DormitoryHelper.filter(path, textBox1.Text, textBox2.Text, textBox3.Text);
             form3.getGrid().DataSource = new BindingList<Student>(result);           
         }
 
@@ -98,6 +81,8 @@ namespace WinFormsApp1
             string json = "{\r\n  \"place\": \"PanasaMyrnogo 25\",\r\n  \"students\": [\r\n    {\r\n      \"faculty\": \"we\",\r\n      \"kafedra\": \"we\",\r\n      \"cours\": \"we\",\r\n      \"livePlace\": \"we\",\r\n      \"id\": 1\r\n    },\r\n    {\r\n      \"faculty\": \"we\",\r\n      \"kafedra\": \"we\",\r\n      \"cours\": \"we\",\r\n      \"livePlace\": \"we\",\r\n      \"id\": 2\r\n    },\r\n    {\r\n      \"faculty\": \"we\",\r\n      \"kafedra\": \"we\",\r\n      \"cours\": \"we\",\r\n      \"livePlace\": \"we\",\r\n      \"id\": 3\r\n    }\r\n  ]\r\n}";
             var dormitor = JsonSerializer.Deserialize<Dormitory>(json);
             dataGridView1.DataSource = new BindingList<Student>(dormitor.students);
+
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -105,7 +90,6 @@ namespace WinFormsApp1
             foreach(DataGridViewRow row in dataGridView1.SelectedRows)
             {
                 dormitory.students.RemoveAt(row.Index);
-                
             }
 
             var json = JsonSerializer.Serialize(dormitory, new JsonSerializerOptions

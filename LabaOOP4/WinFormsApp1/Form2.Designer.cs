@@ -74,9 +74,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(247, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 32);
+            this.label1.Size = new System.Drawing.Size(88, 32);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Name";
+            this.label1.Text = "Faculty";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
@@ -84,9 +84,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(250, 142);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 32);
+            this.label2.Size = new System.Drawing.Size(95, 32);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Colour";
+            this.label2.Text = "Kafedra";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
@@ -94,9 +94,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(250, 226);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 32);
+            this.label3.Size = new System.Drawing.Size(75, 32);
             this.label3.TabIndex = 8;
-            this.label3.Text = "Price";
+            this.label3.Text = "Cours";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBox4
@@ -113,9 +113,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(247, 310);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 32);
+            this.label4.Size = new System.Drawing.Size(111, 32);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Price";
+            this.label4.Text = "LivePlace";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // button1
