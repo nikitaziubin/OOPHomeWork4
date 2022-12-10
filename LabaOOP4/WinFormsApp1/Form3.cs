@@ -14,7 +14,6 @@ namespace WinFormsApp1
 {
     public partial class Form3 : Form
     {
-        Form1 form1 = new Form1();
         public DataGridView getGrid()
         {
             return dataGridView4;

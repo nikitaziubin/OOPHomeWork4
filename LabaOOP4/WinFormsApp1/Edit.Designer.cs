@@ -56,6 +56,7 @@
             this.textBoxKafedra.Name = "textBoxKafedra";
             this.textBoxKafedra.Size = new System.Drawing.Size(200, 78);
             this.textBoxKafedra.TabIndex = 2;
+            this.textBoxKafedra.TextChanged += new System.EventHandler(this.textBoxKafedra_TextChanged);
             // 
             // textBoxCourse
             // 

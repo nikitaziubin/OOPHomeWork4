@@ -68,11 +68,7 @@ namespace WinFormsApp1
 
             //dormitory.students.ElementAt(rowIndex);
             
-            var json = JsonSerializer.Serialize(dormitory, new JsonSerializerOptions
-            {
-                WriteIndented = true
-            });
-            File.WriteAllText(path, json);
+            DormitoryHelper.Save(dormitory, path);
             dataGrid.DataSource = new BindingList<Student>(dormitory.students);
             Close();
         }
@@ -80,6 +76,11 @@ namespace WinFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void textBoxKafedra_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

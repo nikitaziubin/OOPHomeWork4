@@ -39,18 +39,12 @@ namespace WinFormsApp1
             Form2 form2 = new Form2();
             form2.ShowDialog();
             dormitory.students.Add(form2.student);
-            var json = JsonSerializer.Serialize(dormitory, new JsonSerializerOptions
-            {
-                WriteIndented = true
-            });
-            File.WriteAllText(path, json);
+            DormitoryHelper.Save(dormitory, path);
             dataGridView1.DataSource = new BindingList<Student>(dormitory.students);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int rowIndex = dataGridView1.CurrentCell.RowIndex;
-
             Edit edit = new Edit();
             edit.rowIndex = dataGridView1.CurrentCell.RowIndex;
             edit.dormitory = dormitory;
@@ -67,21 +61,12 @@ namespace WinFormsApp1
         {
             Form3 form3 = new Form3();
             form3.Show();
-            IList<Student> result = DormitoryHelper.filter(path, textBox1.Text, textBox2.Text, textBox3.Text);
+            IList<Student> result = DormitoryHelper.Filter(path, textBox1.Text, textBox2.Text, textBox3.Text);
             form3.getGrid().DataSource = new BindingList<Student>(result);           
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            string json = "{\r\n  \"place\": \"PanasaMyrnogo 25\",\r\n  \"students\": [\r\n    {\r\n      \"faculty\": \"we\",\r\n      \"kafedra\": \"we\",\r\n      \"cours\": \"we\",\r\n      \"livePlace\": \"we\",\r\n      \"id\": 1\r\n    },\r\n    {\r\n      \"faculty\": \"we\",\r\n      \"kafedra\": \"we\",\r\n      \"cours\": \"we\",\r\n      \"livePlace\": \"we\",\r\n      \"id\": 2\r\n    },\r\n    {\r\n      \"faculty\": \"we\",\r\n      \"kafedra\": \"we\",\r\n      \"cours\": \"we\",\r\n      \"livePlace\": \"we\",\r\n      \"id\": 3\r\n    }\r\n  ]\r\n}";
-            var dormitor = JsonSerializer.Deserialize<Dormitory>(json);
-            dataGridView1.DataSource = new BindingList<Student>(dormitor.students);
-
 
         }
 
@@ -91,12 +76,8 @@ namespace WinFormsApp1
             {
                 dormitory.students.RemoveAt(row.Index);
             }
-
-            var json = JsonSerializer.Serialize(dormitory, new JsonSerializerOptions
-            {
-                WriteIndented = true
-            });
-            File.WriteAllText(path, json);
+            DormitoryHelper.Save(dormitory, path);
+            
             dataGridView1.DataSource = new BindingList<Student>(dormitory.students);
         }
 

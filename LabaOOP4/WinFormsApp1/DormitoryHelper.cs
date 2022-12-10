@@ -1,10 +1,11 @@
 ﻿using Newtonsoft.Json.Linq;
+using System.Text.Json;
 
 namespace WinFormsApp1
 {
     class DormitoryHelper
     {
-        public static IList<Student> filter(string path, string faculty, string kafedra, string cours)
+        public static IList<Student> Filter(string path, string faculty, string kafedra, string cours)
         {
             string josnFile = File.ReadAllText(path);
 
@@ -23,6 +24,15 @@ namespace WinFormsApp1
                     livePlace = s["livePlace"].ToString()
                 }).ToList();
             return result;
+        }
+
+        public static void Save(Dormitory dormitory, string path)
+        {
+            var json = JsonSerializer.Serialize(dormitory, new JsonSerializerOptions
+            {
+                WriteIndented = true
+            });
+            File.WriteAllText(path, json);
         }
     }
 }
